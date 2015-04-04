@@ -4,9 +4,13 @@ appName=''
 arduinoId=''
 
 # Read all flags and get the parameters
-inputOptions=`getopt -o n:i: -l appName:,arduinoId:`
+if ! options=$(getopt -o ni: -l appName,arduinoId,clong: -- "$@")
+then
+    # something went wrong, getopt will put out an error message for us
+    exit 1
+fi
 
-eval set -- "$inputOptions"
+set -- $options
 while true; do
   case "$1" in
     --appName | -n)
