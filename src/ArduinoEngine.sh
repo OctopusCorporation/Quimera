@@ -28,9 +28,6 @@ while true; do
       	echo "Invalid option: $2"
       	exit 1
       	;;
-    )
-      	break
-      	;;
   esac
 done
 
