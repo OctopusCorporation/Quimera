@@ -8,6 +8,7 @@ while getopts ":n:i:" opt; do
   case $opt in
     n)
 		temp=$OPTARG
+		# Validate if first char is '-' to control the flags aren't empty value
 		if [[ ${temp:0:1} == "-" ]] 
 		then 
 			echo "Invalid App Name"
@@ -37,6 +38,7 @@ while getopts ":n:i:" opt; do
   esac
 done
 
+# Validate if variables are empty
 if [ -z "$appName" ]; then
     echo "appName is null or empty"
 fi
@@ -44,5 +46,12 @@ fi
 if [ -z "$arduinoId" ]; then
     echo "arduinoId is null or empty"
 fi
+
+# Create a directory that contains all files
+mkdir -p "/home/pi/$appName"
+cd "$appName"
+
+# Initialize the default template
+ino init -t empty
 
 echo "All options: $appName y $arduinoId"
