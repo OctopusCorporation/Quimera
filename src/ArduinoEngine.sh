@@ -5,7 +5,7 @@ arduinoId=''
 files=''
 
 # Read all flags and get the parameters
-while getopts 'abf:v' flag; do
+while getopts 'nif:v' flag; do
   case "${flag}" in
     n) appName="${OPTARG}" ;;
     i) arduinoId="${OPTARG}" ;;
@@ -14,3 +14,5 @@ while getopts 'abf:v' flag; do
     *) error "Unexpected option ${flag}" ;;
   esac
 done
+
+echo "All options: "  $appName  " "  $arduinoId
