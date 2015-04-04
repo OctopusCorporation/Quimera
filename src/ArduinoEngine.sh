@@ -9,10 +9,12 @@ eval set -- inputOptions
 while true; do
   case "$1" in
     --appName | -n)
+					echo "$1"
       				appName="$2"
       				shift
       	;;
     --arduinoId | -i)
+					echo "$1"
 					arduinoId="$2"
 					shift
 	  	;;
@@ -21,7 +23,7 @@ while true; do
       	exit 1
       	;;
     --)
-      	break;
+      	break
       	;;
   esac
 done
