@@ -26,7 +26,7 @@ echo " opcion $1"
     (--) shift; break;;
     (-*) echo "$0: error - unrecognized option $1" 1>&2; exit 1;;
     (*) 
-echo " opcion desconocida";break;;
+echo " opcion desconocida $1";break;;
   esac
   shift
 done
