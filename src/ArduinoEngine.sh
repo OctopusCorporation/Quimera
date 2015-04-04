@@ -14,14 +14,14 @@ set -- $options
 while true; do
   case $1 in
     -n|--appName)
-echo " opcion -n"
+echo " opcion $1"
       				#appName="$2"
-      				#shift
+      				shift
       	;;
     -i|--arduinoId)
-echo " opcion -i"
+echo " opcion $1"
 					#arduinoId="$2"
-					#shift
+					shift
 	  	;;
     (--) shift; break;;
     (-*) echo "$0: error - unrecognized option $1" 1>&2; exit 1;;
