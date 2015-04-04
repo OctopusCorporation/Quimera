@@ -2,16 +2,15 @@
 verbose='false'
 appName=''
 arduinoId=''
-files=''
 
 # Read all flags and get the parameters
 while getopts ":n:i:" opt; do
   case $opt in
-    n)
-      	appName=$OPTARG
+    n)      	
+		if [[ ${$OPTARG:0:1} == "-" ]] ; then echo "Invalid App Name"; exit 0; else appName=$OPTARG; fi
       	;;
     i)
-		arduinoId=$OPTARG
+		if [[ ${$OPTARG:0:1} == "-" ]] ; then echo "Invalid App Name"; exit 0; else appName=$arduinoId; fi
 	  	;;
     \?)
       	echo "Invalid option: -$OPTARG" >&2
@@ -23,5 +22,13 @@ while getopts ":n:i:" opt; do
       	;;
   esac
 done
+
+if [ -n "$appName" ]; then
+    echo "appName is not empty"
+fi
+
+if [ -n "$arduinoId" ]; then
+    echo "arduinoId is not empty"
+fi
 
 echo "All options: $appName y $arduinoId"
