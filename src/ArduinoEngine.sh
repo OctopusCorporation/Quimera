@@ -28,7 +28,6 @@ echo " opcion $1"
     (*) 
 echo " opcion desconocida $1";break;;
   esac
-  shift
 done
 
 echo "All options: $appName y $arduinoId"
