@@ -50,6 +50,7 @@ if [ -z "$arduinoId" ]; then
 fi
 
 # Create a directory that contains all files
+echo "/home/pi/$appName"
 mkdir -p "/home/pi/$appName"
 cd "$appName"
 
