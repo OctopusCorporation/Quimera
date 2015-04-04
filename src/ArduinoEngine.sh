@@ -6,11 +6,25 @@ arduinoId=''
 # Read all flags and get the parameters
 while getopts ":n:i:" opt; do
   case $opt in
-    n)      	
-		if [[ ${OPTARG:0:1} == "-" ]] ; then echo "Invalid App Name"; exit 0; else appName=$OPTARG; fi
+    n)
+		temp=$OPTARG
+		if [[ ${temp:0:1} == "-" ]] 
+		then 
+			echo "Invalid App Name"
+			exit 1; 
+		else 
+			appName=$OPTARG
+		fi
       	;;
     i)
-		if [[ ${OPTARG:0:1} == "-" ]] ; then echo "Invalid App Name"; exit 0; else appName=$arduinoId; fi
+		temp=$OPTARG
+		if [[ ${temp:0:1} == "-" ]]
+		then 
+			echo "Invalid App Name"
+			exit 1
+		else 
+			appName=$OPTARG
+		fi
 	  	;;
     \?)
       	echo "Invalid option: -$OPTARG" >&2
