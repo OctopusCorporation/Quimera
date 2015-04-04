@@ -23,7 +23,7 @@ while getopts ":n:i:" opt; do
 			echo "Invalid App Name"
 			exit 1
 		else 
-			appName=$OPTARG
+			arduinoId=$OPTARG
 		fi
 	  	;;
     \?)
@@ -37,12 +37,12 @@ while getopts ":n:i:" opt; do
   esac
 done
 
-if [ -n "$appName" ]; then
-    echo "appName is not empty"
+if [ -z "$appName" ]; then
+    echo "appName is null or empty"
 fi
 
-if [ -n "$arduinoId" ]; then
-    echo "arduinoId is not empty"
+if [ -z "$arduinoId" ]; then
+    echo "arduinoId is null or empty"
 fi
 
 echo "All options: $appName y $arduinoId"
