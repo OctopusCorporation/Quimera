@@ -8,7 +8,7 @@ files=''
 while getopts ":n:" opt; do
   case $opt in
     n)
-      appName = $OPTARG
+      appName=$OPTARG
       ;;
     \?)
       echo "Invalid option: -$OPTARG" >&2
