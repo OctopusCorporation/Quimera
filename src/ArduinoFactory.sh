@@ -56,6 +56,6 @@ cd "/home/pi/$appName-$arduinoId"
 echo "Current path: /home/pi/$appName-$arduinoId"
 
 # Initialize the default template
-ino init -t blink
+ino init -t empty
 
 echo "All options: $appName y $arduinoId"
