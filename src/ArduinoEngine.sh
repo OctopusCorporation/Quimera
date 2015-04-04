@@ -5,20 +5,23 @@ arduinoId=''
 files=''
 
 # Read all flags and get the parameters
-while getopts ":n:" opt; do
+while getopts ":ni:" opt; do
   case $opt in
     n)
-      appName=$OPTARG
-      ;;
+      	appName=$OPTARG
+      	;;
+    i)
+		arduinoId=$OPTARG
+	  	;;
     \?)
-      echo "Invalid option: -$OPTARG" >&2
-      exit 1
-      ;;
+      	echo "Invalid option: -$OPTARG" >&2
+      	exit 1
+      	;;
     :)
-      echo "Option -$OPTARG requires an argument." >&2
-      exit 1
-      ;;
+      	echo "Option -$OPTARG requires an argument." >&2
+      	exit 1
+      	;;
   esac
 done
 
-echo "All options: $appName"
+echo "All options: $appName y $arduinoId"
