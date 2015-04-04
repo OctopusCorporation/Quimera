@@ -19,7 +19,8 @@ while true; do
 					shift
 	  	;;
     *)
-      	echo "Invalid option: -$2"
+		echo "$1"
+      	echo "Invalid option: $2"
       	exit 1
       	;;
     --)
