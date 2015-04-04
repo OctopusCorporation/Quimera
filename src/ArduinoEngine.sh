@@ -5,13 +5,19 @@ arduinoId=''
 files=''
 
 # Read all flags and get the parameters
-while getopts 'nif:v' flag; do
-  case "${flag}" in
-    n) appName="${OPTARG}" ;;
-    i) arduinoId="${OPTARG}" ;;
-    f) files="${OPTARG}" ;;
-    v) verbose='true' ;;
-    *) error "Unexpected option ${flag}" ;;
+while getopts ":n:" opt; do
+  case $opt in
+    n)
+      appName = "$OPTARG" >&2
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument." >&2
+      exit 1
+      ;;
   esac
 done
 
