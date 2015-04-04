@@ -50,9 +50,10 @@ if [ -z "$arduinoId" ]; then
 fi
 
 # Create a directory that contains all files
-echo "/home/pi/$appName"
 mkdir -p "/home/pi/$appName"
-cd "$appName"
+echo "directory is created: /home/pi/$appName"
+cd "/home/pi/$appName"
+echo "Current path: /home/pi/$appName"
 
 # Initialize the default template
 ino init -t empty
