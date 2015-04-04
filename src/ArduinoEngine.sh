@@ -4,7 +4,7 @@ appName=''
 arduinoId=''
 
 # Read all flags and get the parameters
-inputOptions='getopt -o ni: --long appName,arduinoId:'
+inputOptions=`getopt -o ni: --long appName,arduinoId:`
 eval set -- "$inputOptions"
 while true; do
   case "$1" in
