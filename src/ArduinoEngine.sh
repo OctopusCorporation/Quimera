@@ -16,19 +16,19 @@ while true; do
     --appName | -n)
 					echo "$1"
       				appName="$2"
-      				shift
+      				shift 2
       	;;
     --arduinoId | -i)
 					echo "$1"
 					arduinoId="$2"
-					shift
+					shift 2
 	  	;;
     *)
 		echo "$1"
       	echo "Invalid option: $2"
       	exit 1
       	;;
-    --)
+    )
       	break
       	;;
   esac
