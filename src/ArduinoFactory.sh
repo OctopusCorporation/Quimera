@@ -41,10 +41,12 @@ done
 # Validate if variables are empty
 if [ -z "$appName" ]; then
     echo "appName is null or empty"
+    exit 1
 fi
 
 if [ -z "$arduinoId" ]; then
     echo "arduinoId is null or empty"
+    exit 1
 fi
 
 # Create a directory that contains all files
