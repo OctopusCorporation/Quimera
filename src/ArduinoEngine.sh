@@ -13,12 +13,12 @@ fi
 set -- $options
 while true; do
   case "$1" in
-    --appName | -n)
+    -n|--appName)
 					echo "$1"
       				appName="$2"
       				shift
       	;;
-    --arduinoId | -i)
+    -i|--arduinoId)
 					echo "$1"
 					arduinoId="$2"
 					shift
