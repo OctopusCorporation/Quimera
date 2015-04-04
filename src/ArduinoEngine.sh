@@ -12,7 +12,7 @@ fi
 
 set -- $options
 while true; do
-  case "$1" in
+  case $1 in
     -n|--appName)
 					echo "$1"
       				appName="$2"
