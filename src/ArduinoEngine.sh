@@ -8,7 +8,7 @@ files=''
 while getopts ":n:" opt; do
   case $opt in
     n)
-      $appName = "$OPTARG" >&2
+      $appName = $OPTARG
       ;;
     \?)
       echo "Invalid option: -$OPTARG" >&2
@@ -21,4 +21,4 @@ while getopts ":n:" opt; do
   esac
 done
 
-echo "All options: $appName y $arduinoId"
+echo "All options: $appName"
