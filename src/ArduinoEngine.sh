@@ -7,7 +7,7 @@ files=''
 # Read all flags and get the parameters
 while getopts ":n:i:" opt; do
   case $opt in
-    n)
+    name)
       	appName=$OPTARG
       	;;
     i)
