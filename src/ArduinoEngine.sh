@@ -2,24 +2,26 @@
 verbose='false'
 appName=''
 arduinoId=''
-files=''
 
 # Read all flags and get the parameters
-while getopts ":name:i:" opt; do
+inputOptions='getopt -o ni: --long appName,arduinoId:'
+eval set -- inputOptions
+while true; do
   case $opt in
-    name)
-      	appName=$OPTARG
+    --appName | -n)
+      				appName=$2
+      				shift
       	;;
-    i)
-		arduinoId=$OPTARG
+    --arduinoId | -i)
+					arduinoId=$2
+					shift
 	  	;;
-    \?)
-      	echo "Invalid option: -$OPTARG" >&2
+    *)
+      	echo "Invalid option: -$2"
       	exit 1
       	;;
-    :)
-      	echo "Option -$OPTARG requires an argument." >&2
-      	exit 1
+    --)
+      	break;
       	;;
   esac
 done
