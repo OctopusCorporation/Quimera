@@ -1,3 +1,4 @@
+#This script create a Sketch template
 # variables
 verbose='false'
 appName=''
