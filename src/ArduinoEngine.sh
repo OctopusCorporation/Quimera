@@ -5,7 +5,7 @@ arduinoId=''
 files=''
 
 # Read all flags and get the parameters
-while getopts ":ni:" opt; do
+while getopts ":n:i:" opt; do
   case $opt in
     n)
       	appName=$OPTARG
