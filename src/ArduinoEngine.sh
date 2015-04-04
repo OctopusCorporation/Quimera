@@ -16,19 +16,18 @@ while true; do
     --appName | -n)
 					echo "$1"
       				appName="$2"
-      				shift 2
+      				shift
       	;;
     --arduinoId | -i)
 					echo "$1"
 					arduinoId="$2"
-					shift 2
+					shift
 	  	;;
-    *)
-		echo "$1"
-      	echo "Invalid option: $2"
-      	exit 1
-      	;;
+    (--) shift; break;;
+    (-*) echo "$0: error - unrecognized option $1" 1>&2; exit 1;;
+    (*) break;;
   esac
+  shift
 done
 
 echo "All options: $appName y $arduinoId"
