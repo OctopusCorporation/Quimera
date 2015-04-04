@@ -15,4 +15,4 @@ while getopts 'nif:v' flag; do
   esac
 done
 
-echo "All options: "  $appName  " "  $arduinoId
+echo "All options: $appName y $arduinoId"
